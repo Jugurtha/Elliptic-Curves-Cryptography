@@ -37,7 +37,7 @@ Elliptic curves are plane algebraic curves consisting of $(x,y)\in\mathbb R^2$ p
 $$Ax^3 +Bx^2y + Cxy^2 + Dy^3 +Ex^2 + Fxy + Gy^2 + Hx + Iy + j = 0$$
 Together with an "imaginary" point  at infinity  denoted as $\mathbb O$ .
 In cryptography, elliptic curves over $\mathbb Z_p$, $p\gt 3$, are simplified in the Weierstrass form defined as $(x,y)\in\mathbb Z_p$ , $a,b \in \mathbb Z_p$ :
-$$ y^2 = x^3 + ax + b $$
+$$y^2 = x^3 + ax + b$$
 $$4a^3+27b^2\neq0$$
 furthermore,  ECC curves are defined over the finite fields $F_p$  where p is prime, or, $F_2^m$ and the points on the curve are limited to the integer coordinates within the field. Algebraic operations within the field result in a point within the field.
 Consequently, the equation of the curve become :
@@ -95,13 +95,13 @@ $$\lambda=\frac{y_q-y_p}{xq-xp}$$
 $$x_r=\lambda^2-x_p-x_q$$
 $$y_r=\lambda(x_p-x_r)-y_p$$
 such that : 
-$$P,Q \neq \mathbb O$$ and $$P \neq Q$$
+$$P,Q \neq \mathbb O \text{ and } P \neq Q$$
 ###### Proof
 The line $(L): y=\lambda x + \beta$ passes by the points $P=(x_p,y_p)$ and $Q=(x_q,y_q)$ such that $P\neq Q$ and $C=(x_c,y_c)$ and let $R=(x_r,y_r)$ such that $P + Q = R$ on the elliptic curve $(C): y^2=x^3 + ax + b$  therefore :
 the slope $\lambda$ is equal to : 
 $$\lambda = \frac{y_q-y_p}{x_q-xp}$$
  and $\beta$ is therefore :
- $$\beta = y_p-\lambda x_p$$
+$$\beta = y_p-\lambda x_p$$
  By substitution $y$ from the line equation in the elliptic cure equation, we get :
 $$(\lambda x + \beta)^2 = x^3 + ax+b$$
 $$x^3-\lambda^2x^2+(a-2\lambda\beta)x +(b-\beta^2) = 0$$
