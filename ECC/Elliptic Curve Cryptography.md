@@ -71,7 +71,7 @@ if __name__ == '__main__':
     plt.show()
 ```
 
-![Elliptic curve](y2x3p7mod17.png y²= x^3+7 mod 17)
+![Elliptic curve](y2x3p7mod17.png "y²= x^3+7 mod 17")
 ### Operation on EC Points
 #### Point operation
 
