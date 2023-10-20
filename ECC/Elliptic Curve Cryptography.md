@@ -203,7 +203,7 @@ $$
 \begin{array}{lcr}
 Alice& &Bob\\
 &\text{Share EC parameters above}&\\
-\text{Generate random integer}& & \text{Generate random integer}\\
+\text{Generate random integer } a\in\{2,3,\dots n-1\}& & \text{Generate random integer } b\in\{2,3,\dots n-1\}\\
 A = K_{pubA}= aG = (x_B,y_B) & & B = K_{pubB}= bG = (x_B,y_B)\\
 &\text{Alice sends A to Bob}&\\
 &\text{Bob sends B to Alice}&\\
