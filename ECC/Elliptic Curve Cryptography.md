@@ -167,8 +167,8 @@ A generator point G on an elliptic curve is a point from which you can calculate
 Given an elliptic curve $E$ of order $\#E=n$. We consider a primitive element (Generator) $P$ and another element $T$ of $E$. The DL problem is finding the integer $d$ where $1\le d \le n$, such that :
 $$\underbrace{P+P+P+P+\dots+P}_{\text{d times}}=dP=T$$
 ### Hasse's Theorem
-Given an elliptic curve E modulo p, the number of points on the curve is denoted by $\#E$ and is bounded by :
-$$p+1-2\sqrt{p}\le \#E\le+1+2\sqrt{p}$$
+Given an elliptic curve E modulo p, the number of points on the curve is denoted by $\\#E$ and is bounded by :
+$$p+1-2\sqrt{p}\le \\#E\le+1+2\sqrt{p}$$
 ### Computational Difficulty of ECDLP
 If the Elliptic curve modulo p is chosen carefully, the best known algorithms for computing the ECDLP requires roughly $\sqrt{p}$ steps to compute.
 In practice, the integer p is a very large prime number of n bits binary representation such that the modular inverse is always computable.  Therefore, the rough number of steps required is of the order :
