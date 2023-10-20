@@ -46,7 +46,7 @@ $$4a^3+27b^2\not\equiv 0\pmod p$$
 
 The ECC uses (x, y) points within the Galois field  $F_p$  such that $x,y \in [0;p-1]$
 ### Exemple of Elliptic curve
-the following code plots the curve $y^2 = x^3 + 7[17]$ :
+the following code plots the curve $y^2 \equiv x^3 + 7[17]$ :
 ```
 import matplotlib.pyplot as plt  
 import pandas as pd  
