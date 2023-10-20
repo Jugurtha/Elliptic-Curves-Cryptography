@@ -110,7 +110,8 @@ $(x_p+x_q-\lambda^2)x^2+(a-2\lambda\beta-x_px_q)x+(b-\beta^2)$                  
 $(x_p+x_q-\lambda^2)x^2+(x_p+x_q-\lambda^2)(x_px_q)x-(x_p+x_q-\lambda^2)x_px_q$  |
 
 and the reminder is equal to 0 since P and Q's x-coordinates are solutions to the equation.
-Therefore :$$x+(x_p+x_q-\lambda^2) = 0$$
+Therefore :
+$$x+(x_p+x_q-\lambda^2) = 0$$
 $$x_c=(\lambda^2-x_p-x_q)$$
 and it follows that :
 $$y_c = \lambda x_c+y_p-\lambda x_p$$
