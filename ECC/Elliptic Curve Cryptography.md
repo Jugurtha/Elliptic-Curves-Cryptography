@@ -34,7 +34,7 @@ ECC provides :
 These algorithms use curves like secp256k1, curve25519 or p521 for there calculation and rely on the discrete logarithm problem. The private key is an integer and the public key is a point on the elliptic curve.
 ## Mathematical introduction to Elliptic Curves
 Elliptic curves are plane algebraic curves consisting of $(x,y)\in\mathbb R^2$ points described by the equation :
-$$ Ax^3 +Bx^2y + Cxy^2 + Dy^3 +Ex^2 + Fxy + Gy^2 + Hx + Iy + j = 0$$
+$$Ax^3 +Bx^2y + Cxy^2 + Dy^3 +Ex^2 + Fxy + Gy^2 + Hx + Iy + j = 0$$
 Together with an "imaginary" point  at infinity  denoted as $\mathbb O$ .
 In cryptography, elliptic curves over $\mathbb Z_p$, $p\gt 3$, are simplified in the Weierstrass form defined as $(x,y)\in\mathbb Z_p$ , $a,b \in \mathbb Z_p$ :
 $$ y^2 = x^3 + ax + b $$
