@@ -176,3 +176,24 @@ $$\sqrt{p}\approx 2^\frac{n}{2}$$Typically, 256-bits elliptic curves provide sli
 - The secp256k1 (p = 256) curve provides ~ 128-bit security (127.8 bits to be precise)
 - The Curve448 (p = 448) provides ~ 224-bit security (222.8 bits to be precise).
 ## Elliptic Curve Diffie-Hellman
+Using elliptic curves in cryptography requires defining a set of parameters. Generally for the elliptic curve over the finite field $\mathbb F_p$:
+$$y^2 \equiv x^3 + ax + b\pmod p$$
+$$4a^3+27b^2\not\equiv 0\pmod p$$
+- The generator point $G=(x_g,y_g)$
+- The order of the curve $n$
+- The cofactor of the curve $h$
+- An integer k which will serve as private key noted $K_pr$
+- A public key $P=(x_p,y_p)\in (E)$ noted $K_pub$
+
+The protocol of ECDH follows these steps :
+
+Alice                                                                                               Bob
+                                   Share EC parameters above
+Generate random integer                                    Generate random integer
+$a=K_{prA} \in \{2,3, \dots, n-1\}$                               $b=K_{prB} \in \{2,3, \dots, n-1\}$
+
+$A = K_{pubA}= aG = (x_B,y_B)$                                $B = K_{pubB}= bG = (x_B,y_B)$
+											Alice sends A to Bob
+											Bob sends B to Alice
+Calculate $K = aB=(x_AB,y_AB)$                     Calculate $K = bA=(x_AB,yAB)$
+In the end $K$ is known by Alice and Bob and can be used as a secret key.
