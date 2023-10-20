@@ -107,10 +107,17 @@ $$(\lambda x + \beta)^2 = x^3 + ax+b$$
 $$x^3-\lambda^2x^2+(a-2\lambda\beta)x +(b-\beta^2) = 0$$
 But, P and Q are solution to the above equation since they are points on  (C) and (L) by construction. Therefore, by Euclidean division over $(x-x_p)(x-x_q)$ we find :
 
-$\underline{x^3-\lambda^2x^2+(a-2\lambda\beta)x +(b-\beta^2) = 0}$                                         | $\underline{x^2-(x_p+x_q)x+x_px_q}$
-$-x^3+(x_p+x_q)x^2-x_px_qx$                                                           | $x+(x_p+x_q-\lambda^2)$
-$(x_p+x_q-\lambda^2)x^2+(a-2\lambda\beta-x_px_q)x+(b-\beta^2)$                         | 
-$(x_p+x_q-\lambda^2)x^2+(x_p+x_q-\lambda^2)(x_px_q)x-(x_p+x_q-\lambda^2)x_px_q$  |
+$$
+\begin{array}{l|l}
+x^3-\lambda^2x^2+(a-2\lambda\beta)x +(b-\beta^2) & x^2-(x_p+x_q)x+x_px_q \\
+\hline
+-x^3+(x_p+x_q)x^2-x_px_qx & x+(x_p+x_q-\lambda^2)\\
+(x_p+x_q-\lambda^2)x^2+(a-2\lambda\beta-x_px_q)x+(b-\beta^2) & \\
+-(x_p+x_q-\lambda^2)x^2+(x_p+x_q-\lambda^2)(x_p+x_q)x-(x_p+x_q-\lambda^2)x_px_q & \\
+\dots & \\
+0 &
+\end{array}
+$$
 
 and the reminder is equal to 0 since P and Q's x-coordinates are solutions to the equation.
 Therefore :
