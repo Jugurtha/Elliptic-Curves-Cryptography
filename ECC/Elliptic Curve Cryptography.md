@@ -137,3 +137,42 @@ $$y_r=\lambda(x_p-x_r)-y_p$$
 ##### Remark 
 In elliptic curve cryptography, the division operation becomes the modular inverse operation $a*a^-1\equiv \pmod p$.
 ##### Point multiplication
+Given the EC $(E): y^2=x^3+ax+b$, point multiplication is defined as the repeated addition of a point $P=(x,y) \in (E)$ to itself :
+$$nP=\underbrace{P+P+P+P+\dots+P}_{n}$$
+Multiple algorithms implement point multiplication in a more efficient way than the straightforward approche of repeated addition such ad Double and Add and the Montgomery Ladder.
+###### Double and Add
+To compute $S=nP$, we start with the binary representation of n noted $nb[0..l[, l=log_2(n)$ and we define add(P,Q) and double(P) as the point addition and multiplication on the EC $(E):y^2\equiv x^3+ax+b)\pmod p$ and $4a^3+27b^2\not\equiv 0\pmod p$ :
+```
+let R = P
+for i from l-2 to 0:
+	R = double(R)
+	if nb[i] == 1:
+		R = add(R, P)
+return R
+```
+#### Order and Cofactor of an Elliptic Curve
+Points on a elliptic curves 
+$$(E):y^2\equiv x^3+ax+b)\pmod p$$ $$4a^3+27b^2\not\equiv 0\pmod p$$
+form cyclic algebraic groups i.e. the addition or multiplication by integers of points of the groupe results in another point in the groupe.
+the order $n\in \mathbb N$ of the curve is the number of points on the curve including the infinity point $\mathbb O$. each curve can be composed of $h\in \mathbb N$ cyclic subgroups and each has an order of $r\in \mathbb N$ including the infinity point $\mathbb O$.
+Therefore, the cofactor expressed as :
+$$h=\frac{n}{r}$$
+Examples:
+- The elliptic curve `secp256k1` has a cofactor = 1.
+- The elliptic curve `Curve25519` has a cofactor = 8.
+- The elliptic curve `Curve448` has a cofactor = 4.
+#### Generator points
+A generator point G on an elliptic curve is a point from which you can calculate any other point from a cyclic subgroup of order $r$ on the curve by multiplying G by an integer $i\in[0..r]$.
+## Elliptic Curve Discrete Logarithm Problem
+Given an elliptic curve $E$ of order $\#E=n$. We consider a primitive element (Generator) $P$ and another element $T$ of $E$. The DL problem is finding the integer $d$ where $1\le d \le n$, such that :
+$$\underbrace{P+P+P+P+\dots+P}_{\text{d times}}=dP=T$$
+### Hasse's Theorem
+Given an elliptic curve E modulo p, the number of points on the curve is denoted by $\#E$ and is bounded by :
+$$p+1-2\sqrt{p}\le \#E\le+1+2\sqrt{p}$$
+### Computational Difficulty of ECDLP
+If the Elliptic curve modulo p is chosen carefully, the best known algorithms for computing the ECDLP requires roughly $\sqrt{p}$ steps to compute.
+In practice, the integer p is a very large prime number of n bits binary representation such that the modular inverse is always computable.  Therefore, the rough number of steps required is of the order :
+$$\sqrt{p}\approx 2^\frac{n}{2}$$Typically, 256-bits elliptic curves provide slightly less than128-bit security strength because the order of the curve $n$ is less than $p$ and the cofactor $h\lt 1$ for instance :
+- The secp256k1 (p = 256) curve provides ~ 128-bit security (127.8 bits to be precise)
+- The Curve448 (p = 448) provides ~ 224-bit security (222.8 bits to be precise).
+## Elliptic Curve Diffie-Hellman
