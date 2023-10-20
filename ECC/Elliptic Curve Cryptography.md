@@ -199,13 +199,16 @@ $$4a^3+27b^2\not\equiv 0\pmod p$$
 
 The protocol of ECDH follows these steps :
 
-Alice                                                                                               Bob
-                                   Share EC parameters above
-Generate random integer                                    Generate random integer
-$a=K_{prA} \in \{2,3, \dots, n-1\}$                               $b=K_{prB} \in \{2,3, \dots, n-1\}$
+$$
+\begin{array}{lcr}
+Alice& &Bob\\
+&\text{Share EC parameters above}&\\
+\text{Generate random integer}& & \text{Generate random integer}\\
+A = K_{pubA}= aG = (x_B,y_B) & & B = K_{pubB}= bG = (x_B,y_B)\\
+&\text{Alice sends A to Bob}&\\
+&\text{Bob sends B to Alice}&\\
+\text{Calculate } K = aB=(x_{AB},y_{AB})& & \text{Calculate } K = bA=(x_{AB},y_{AB})
+\end{array}
+$$
 
-$A = K_{pubA}= aG = (x_B,y_B)$                                $B = K_{pubB}= bG = (x_B,y_B)$
-											Alice sends A to Bob
-											Bob sends B to Alice
-Calculate $K = aB=(x_AB,y_AB)$                     Calculate $K = bA=(x_AB,yAB)$
-In the end $K$ is known by Alice and Bob and can be used as a secret key.
+In the end $K$ is known by Alice and Bob and can be used as a secret key(either x or y parameter) .
