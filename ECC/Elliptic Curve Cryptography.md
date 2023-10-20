@@ -77,7 +77,8 @@ if __name__ == '__main__':
 
 ##### Point at infinity
 the point at infinity denoted $\mathbb O$ is the identity element of the elliptic curve arithmetic, so :
-$$\mathbb O + \mathbb O = \mathbb O$$$$\mathbb O + P =  P$$
+$$\mathbb O + \mathbb O = \mathbb O$$
+$$\mathbb O + P =  P$$
 for P point on the curve
 ##### Point negation
 $$P + (-P) =\mathbb O$$
@@ -127,7 +128,7 @@ $$\lambda=\frac{3x_p^2+a}{2y}$$
 ###### Proof
 the slope of the tangent to $C$ is calculated from it's equation and using improper differentiation as such :
 $$y^2=x^3+ax+b$$
-$$ 2ydy = (3x^2+a)dx$$
+$$2ydy = (3x^2+a)dx$$
 but :
 $$\lambda(x,y) = \frac{dx}{dy}$$
 so : 
