@@ -164,7 +164,7 @@ Examples:
 #### Generator points
 A generator point G on an elliptic curve is a point from which you can calculate any other point from a cyclic subgroup of order $r$ on the curve by multiplying G by an integer $i\in[0..r]$.
 ## Elliptic Curve Discrete Logarithm Problem
-Given an elliptic curve $E$ of order $\#E=n$. We consider a primitive element (Generator) $P$ and another element $T$ of $E$. The DL problem is finding the integer $d$ where $1\le d \le n$, such that :
+Given an elliptic curve $E$ of order $\\#E=n$. We consider a primitive element (Generator) $P$ and another element $T$ of $E$. The DL problem is finding the integer $d$ where $1\le d \le n$, such that :
 $$\underbrace{P+P+P+P+\dots+P}_{\text{d times}}=dP=T$$
 ### Hasse's Theorem
 Given an elliptic curve E modulo p, the number of points on the curve is denoted by $\\#E$ and is bounded by :
