@@ -77,7 +77,8 @@ if __name__ == '__main__':
 
 ##### Point at infinity
 the point at infinity denoted $\mathbb O$ is the identity element of the elliptic curve arithmetic, so :
-$$\mathbb O + \mathbb O = \mathbb O$$$$\mathbb O + P =  P$$ for P point on the curve
+$$\mathbb O + \mathbb O = \mathbb O$$$$\mathbb O + P =  P$$
+for P point on the curve
 ##### Point negation
 $$P + (-P) =\mathbb O$$
 For EC of the forme $y^2= x^3 + ax +b$ the above negation of P = (x, y) on the elliptic curve results in the following :
@@ -96,7 +97,8 @@ such that :
 $$P,Q \neq \mathbb O$$ and $$P \neq Q$$
 ###### Proof
 The line $(L): y=\lambda x + \beta$ passes by the points $P=(x_p,y_p)$ and $Q=(x_q,y_q)$ such that $P\neq Q$ and $C=(x_c,y_c)$ and let $R=(x_r,y_r)$ such that $P + Q = R$ on the elliptic curve $(C): y^2=x^3 + ax + b$  therefore :
-the slope $\lambda$ is equal to : $$\lambda = \frac{y_q-y_p}{x_q-xp}$$
+the slope $\lambda$ is equal to : 
+$$\lambda = \frac{y_q-y_p}{x_q-xp}$$
  and $\beta$ is therefore :
  $$\beta = y_p-\lambda x_p$$
  By substitution $y$ from the line equation in the elliptic cure equation, we get :
@@ -153,7 +155,7 @@ return R
 ```
 #### Order and Cofactor of an Elliptic Curve
 Points on a elliptic curves 
-$$(E):y^2\equiv x^3+ax+b)\pmod p$$ $$4a^3+27b^2\not\equiv 0\pmod p$$
+$$(E):y^2\equiv x^3+ax+b)\pmod p \text{  }4a^3+27b^2\not\equiv 0\pmod p$$
 form cyclic algebraic groups i.e. the addition or multiplication by integers of points of the groupe results in another point in the groupe.
 the order $n\in \mathbb N$ of the curve is the number of points on the curve including the infinity point $\mathbb O$. each curve can be composed of $h\in \mathbb N$ cyclic subgroups and each has an order of $r\in \mathbb N$ including the infinity point $\mathbb O$.
 Therefore, the cofactor expressed as :
@@ -173,7 +175,8 @@ $$p+1-2\sqrt{p}\le \\#E\le+1+2\sqrt{p}$$
 ### Computational Difficulty of ECDLP
 If the Elliptic curve modulo p is chosen carefully, the best known algorithms for computing the ECDLP requires roughly $\sqrt{p}$ steps to compute.
 In practice, the integer p is a very large prime number of n bits binary representation such that the modular inverse is always computable.  Therefore, the rough number of steps required is of the order :
-$$\sqrt{p}\approx 2^\frac{n}{2}$$Typically, 256-bits elliptic curves provide slightly less than128-bit security strength because the order of the curve $n$ is less than $p$ and the cofactor $h\lt 1$ for instance :
+$$\sqrt{p}\approx 2^\frac{n}{2}$$
+Typically, 256-bits elliptic curves provide slightly less than128-bit security strength because the order of the curve $n$ is less than $p$ and the cofactor $h\lt 1$ for instance :
 - The secp256k1 (p = 256) curve provides ~ 128-bit security (127.8 bits to be precise)
 - The Curve448 (p = 448) provides ~ 224-bit security (222.8 bits to be precise).
 ## Elliptic Curve Diffie-Hellman
