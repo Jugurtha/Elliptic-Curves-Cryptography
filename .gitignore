@@ -1,2 +1,7 @@
 .idea
 venv
+CPP/build
+CPP/build/*
+__pycache__
+__pycache__/*
+.vscode

@@ -33,7 +33,7 @@ class EllipticCurve:
 
         v = self.reduce_modp(y1 - u * x1)
         x3 = self.reduce_modp(u * u - x1 - x2)
-        y3 = self.reduce_modp(-u * x3 - v)
+        y3 = self.reduce_modp(-u * x3 - s)
         return x3, y3
 
     def multiply(self, k, P):
