@@ -16,10 +16,10 @@ It's features are :
 	- "Exactly once" : Messages are assured to arrive exactly once.
 ## General View of MQTT Protocol
 Communication between the MQTT client and broker can be represented like this :
-![[MQTT Client to broker protocol.png]]
+![MQTT Client to broker protocol]("MQTT Client to broker protocol.png")
 ## MQTT Packet Sizes
 MQTT packets have three main parts : Control, Packet length, Remaining length.
-![[MQTT Packet.png]]
+![MQTT Packet](MQTT Packet.png)
 - The control field is 1 byte long.
 - the Length field which describes the size of the remaining length and can vary from 1 byte to 4 bytes. 
 - Each byte of the Length field starts with continuation bit, therefor the remaining length field can be of a maximum size of $2^28=268 435 456\text{ bits} = 256 \text{MB}$
@@ -33,7 +33,7 @@ This protocol facilitates a request/response interaction model between applicati
 CoAP uses a request/response model based on REST with similar request messages : GET, POST, PUT and DELETE. The responses are generally one of three messages : SUCCESS, ERROR, SERVER ERROR.
 
 Generally a CoAP packet looks like this :
-![[CoAP Message Packet.png]]
+![CoAP Message Packet](CoAP Message Packet.png)
 ## Security of CoAP
 CoAP defines four security modes:
 
@@ -187,15 +187,15 @@ Assuming Alice owns the necessary coins, all she needs to do is sign the message
 ## General view of ECDSA
 Signing in ECDSA is done through these steps assuming $d_A$ is a private key number and $Q_A$ is a public key for Alice  and z is the hash of the message above (SHA256 in the bitcoin case):
 - We generate a random number k between 1 and n-1 where n is the group order of the curve.
-- Compute $(x, y) = k*G$, where G is the generator point of the curve (secp256k1 in the bitcoin case)
-- Compute $r \equiv x \pmod n$. If $r=0$, generate another random k and start over.
-- Compute $s = k^{-1}(z + r*d_A)$ mod n. If $s=0$, generate another random k and start over
-The pair $r\text{ and } s$ are the signature of $z$ for the $K_pr = d_A$.
+- Compute $ (x, y) = k*G $, where G is the generator point of the curve (secp256k1 in the bitcoin case)
+- Compute $ r \equiv x \pmod n $. If $ r=0 $, generate another random k and start over.
+- Compute $ s \equiv k^{-1}(z + r*d_A) \pmod n $. If $ s=0 $, generate another random k and start over
+The pair $ r\text{ and } s $ are the signature of $ z $ for the $ K_pr = d_A $.
 On the Other hand, Verifying the signature is done as such :
 Let the signature pair $r$ and $s$, $K_pub = Q_A$ and $z$ the message that was signed.
 - Verify  $1\le r,s\le n-1$
-- Compute $u_1 \equiv z*s^{-1} \pmod n \text{ and } u2 \equiv r*s{-1} \pmod n$.
-- Compute $(x, y) = u_1*G + u_2*Q_A \neq \infty$
+- Compute $ u_1 \equiv z*s^{-1} \pmod n \text{ and } u2 \equiv r*s{-1} \pmod n $.
+- Compute $ (x, y) = u_1*G + u_2*Q_A \neq \infty $
 - If $r \equiv x \pmod n$ then the signature is valid. Otherwise, or if any of the checks fail, then the signature is invalid.
 ### Remark
 Signature size in the case of Bitcoin is 256 bits as set by secp256k1.
