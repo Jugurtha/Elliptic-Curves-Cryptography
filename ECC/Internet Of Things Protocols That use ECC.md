@@ -16,10 +16,10 @@ It's features are :
 	- "Exactly once" : Messages are assured to arrive exactly once.
 ## General View of MQTT Protocol
 Communication between the MQTT client and broker can be represented like this :
-![MQTT Client to broker protocol]("MQTT Client to broker protocol.png")
+![MQTT Client to broker protocol](MQTTClienttobrokerprotocol.png "MQTT Client to broker protocol")
 ## MQTT Packet Sizes
 MQTT packets have three main parts : Control, Packet length, Remaining length.
-![MQTT Packet](MQTT Packet.png)
+![MQTT Packet](MQTTPacket.png "MQTT Packet")
 - The control field is 1 byte long.
 - the Length field which describes the size of the remaining length and can vary from 1 byte to 4 bytes. 
 - Each byte of the Length field starts with continuation bit, therefor the remaining length field can be of a maximum size of $2^28=268 435 456\text{ bits} = 256 \text{MB}$
@@ -33,7 +33,7 @@ This protocol facilitates a request/response interaction model between applicati
 CoAP uses a request/response model based on REST with similar request messages : GET, POST, PUT and DELETE. The responses are generally one of three messages : SUCCESS, ERROR, SERVER ERROR.
 
 Generally a CoAP packet looks like this :
-![CoAP Message Packet](CoAP Message Packet.png)
+![CoAP Message Packet](CoAPMessagePacket.png "CoAP Message Packet")
 ## Security of CoAP
 CoAP defines four security modes:
 
