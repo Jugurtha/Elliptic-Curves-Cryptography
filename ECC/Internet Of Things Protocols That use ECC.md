@@ -194,7 +194,8 @@ The pair $r\text{ and } s$ are the signature of $z$ for the $K_pr = d_A$.
 On the Other hand, Verifying the signature is done as such :
 Let the signature pair $r$ and $s$, $K_pub = Q_A$ and $z$ the message that was signed.
 - Verify  $1\le r,s\le n-1$
-- Compute $u_1 \equiv z*s^{-1} \pmod n$ and $u2 \equiv r*s{-1} \pmod n$.
+- Compute $u_1 \equiv z*s^{-1} \pmod n$ and 
+$$u2 \equiv r*s{-1} \pmod n$$
 - Compute $(x, y) = u_1*G + u_2*Q_A \neq \infty$
 - If $r \equiv x \pmod n$ then the signature is valid. Otherwise, or if any of the checks fail, then the signature is invalid.
 ### Remark
