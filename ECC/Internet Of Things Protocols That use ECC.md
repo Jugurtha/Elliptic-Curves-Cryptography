@@ -10,7 +10,7 @@ It's features are :
 - Use of basic TCP/IP.
 - Small transport overhead with fixed header length of 2 bytes and reduced trafic.
 - A mechanism to notify abnormal disconnections (Last Will and Testament).
-- There possible qualities of message delivery :
+- Three possible qualities of message delivery :
 	- "At most once" : Messages loss and duplication occur.
 	- "At least once" : Messages are assured to arrive with potential duplicates.
 	- "Exactly once" : Messages are assured to arrive exactly once.
@@ -190,9 +190,9 @@ Signing in ECDSA is done through these steps assuming $d_A$ is a private key num
 - Compute $(x, y) = k*G$, where G is the generator point of the curve (secp256k1 in the bitcoin case)
 - Compute $r \equiv x \pmod n$. If $r=0$, generate another random k and start over.
 - Compute $s \equiv k^{-1}(z + r*d_A) \pmod n$. If $s=0$, generate another random k and start over
-The pair $r\text{ and } s$ are the signature of $z$ for the $K_pr = d_A$.
+The pair $r\text{ and } s$ are the signature of $z$ for the $K_{pr} = d_A$.
 On the Other hand, Verifying the signature is done as such :
-Let the signature pair $r$ and $s$, $K_pub = Q_A$ and $z$ the message that was signed.
+Let the signature pair $r$ and $s$, $K_{pub} = Q_A$ and $z$ the message that was signed.
 - Verify  $1\le r,s\le n-1$
 - Compute $`u_1 \equiv z*s^{-1} \pmod n\text{ and }u2 \equiv r*s{-1} \pmod n`$
 - Compute $`(x, y) = u_1*G + u_2*Q_A \neq \infty`$
